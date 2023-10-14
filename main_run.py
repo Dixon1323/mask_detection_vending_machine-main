@@ -10,7 +10,7 @@ import cv2
 import os
 import serial
 
-ser = serial.Serial('COM6', 9600)
+# ser = serial.Serial('COM6', 9600)
 
 def detect_and_predict_mask(frame, faceNet, maskNet):
     # grab the dimensions of the frame and then construct a blob
@@ -115,14 +115,14 @@ while True:
         cv2.imshow("Frame", frame)
         key = cv2.waitKey(1) & 0xFF
         # if the `q` key was pressed, break from the loop
-        if signal == 'g':
-            ser.write(b'A')
-            time.sleep(5)
-        elif signal == 'm':
-            ser.write(b'M')
-            time.sleep(5)
-        if key == ord("q"):
-            break
+        # if signal == 'g':
+        #     ser.write(b'A')
+        #     time.sleep(5)
+        # elif signal == 'm':
+        #     ser.write(b'M')
+        #     time.sleep(5)
+        # if key == ord("q"):
+        #     break
     # do a bit of cleanup
 cv2.destroyAllWindows()
 vs.stop()
